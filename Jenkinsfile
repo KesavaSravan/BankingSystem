@@ -26,6 +26,11 @@ pipeline {
                 sh "./gradlew assemble"
             }
         }
+        stage('Run') {
+            steps {
+                sh './gradlew bootRun &'
+            }
+        }
     }
 
     post {
